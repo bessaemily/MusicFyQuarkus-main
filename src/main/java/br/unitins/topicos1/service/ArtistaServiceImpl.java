@@ -11,6 +11,7 @@ import br.unitins.topicos1.repository.ArtistaRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
+import jakarta.validation.ConstraintDeclarationException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
@@ -59,7 +60,7 @@ public class ArtistaServiceImpl implements ArtistaService{
 
     @Override
     @Transactional
-    public ArtistaResponseDTO update(ArtistaDTO dto, Long id) {
+    public ArtistaResponseDTO update(ArtistaDTO dto, Long id) throws ConstraintDeclarationException {
 
         Artista artista = repository.findById(id);
         if (artista != null){
@@ -84,8 +85,13 @@ public class ArtistaServiceImpl implements ArtistaService{
 
     @Override
     public ArtistaResponseDTO findById(Long id) {
-        return ArtistaResponseDTO.valueOf(repository.findById(id));
+        Artista artista = repository.findById(id);
+            if (artista == null)
+                throw new NotFoundException("Artista nao encontrado");
+            return ArtistaResponseDTO.valueOf(artista);
     }
+
+    
 
     @Override
     public List<ArtistaResponseDTO> findByNome(String nome) {
@@ -98,6 +104,13 @@ public class ArtistaServiceImpl implements ArtistaService{
         return repository.listAll().stream()
             .map(a -> ArtistaResponseDTO.valueOf(a)).collect(Collectors.toList());
     }
+
+
+    // private void validar (ArtistaDTO artistaDTO) throws ConstraintViolationException{
+    //     Set<ConstraintViolation<ArtistaDTO>> violations = validator.validate(artistaDTO);
+    //     if (!violations.isEmpty())
+    //         throw new ConstraintDeclarationException(violations);
+    // }
 
 
     @Override

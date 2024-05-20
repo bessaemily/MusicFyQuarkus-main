@@ -3,9 +3,9 @@ package br.unitins.topicos1.resource;
 
 import org.jboss.logging.Logger;
 
-import br.unitins.topicos1.dto.PacienteDTO;
-import br.unitins.topicos1.dto.PacienteResponseDTO;
-import br.unitins.topicos1.service.PacienteService;
+import br.unitins.topicos1.dto.ClienteDTO;
+import br.unitins.topicos1.dto.ClienteResponseDTO;
+import br.unitins.topicos1.service.ClienteService;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.Consumes;
@@ -23,26 +23,26 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 
 
-@Path("/pacientes")
+@Path("/clientes")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class PacienteResource {
+public class ClienteResource {
 
     @Inject
-    PacienteService service;
+    ClienteService service;
 
-    private static final Logger LOG = Logger.getLogger(PacienteResource.class);
+    private static final Logger LOG = Logger.getLogger(ClienteResource.class);
 
     @POST
-    public Response create(PacienteDTO dto) {
-        PacienteResponseDTO retorno = service.create(dto);
+    public Response create(ClienteDTO dto) {
+        ClienteResponseDTO retorno = service.create(dto);
         return Response.status(201).entity(retorno).build();
     }
 
     @PUT 
     @Transactional
     @Path("/{id}")
-    public Response update(PacienteDTO dto, @PathParam("id") Long id) {
+    public Response update(ClienteDTO dto, @PathParam("id") Long id) {
         service.update(id, dto);
         return Response.status(Status.NO_CONTENT).build();
     }

@@ -5,7 +5,7 @@ import br.unitins.topicos1.dto.UsuarioResponseDTO;
 import br.unitins.topicos1.service.HashService;
 import br.unitins.topicos1.service.HashServiceImpl;
 import br.unitins.topicos1.service.JwtService;
-import br.unitins.topicos1.service.PacienteService;
+import br.unitins.topicos1.service.ClienteService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.POST;
@@ -24,7 +24,7 @@ public class AuthResource {
     HashService hashService;
 
     @Inject
-    PacienteService pacienteService;
+    ClienteService pacienteService;
 
     @Inject
     JwtService jwtService;

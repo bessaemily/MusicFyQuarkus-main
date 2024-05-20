@@ -20,9 +20,9 @@ insert into pessoa (cpf, nome, datanascimento, id_usuario) values ('222.222.222-
 insert into pessoa (cpf, nome, datanascimento, id_usuario) values ('333.333.333-33', 'David', '1982-06-11', 3);
 insert into pessoa (cpf, nome, datanascimento, id_usuario) values ('444.444.444-44', 'Fredson', '1982-06-11', null);
 
-insert into paciente (id_pessoa, id_cidade) values (1, 4);
-insert into paciente (id_pessoa, id_cidade) values (2, 1);
-insert into paciente (id_pessoa, id_cidade) values (4, 2);
+insert into cliente (id_pessoa, id_cidade) values (1, 4);
+insert into cliente (id_pessoa, id_cidade) values (2, 1);
+insert into cliente (id_pessoa, id_cidade) values (4, 2);
 
 insert into gravadora (nome) values ('Sony Music');
 insert into gravadora (nome) values ('Universal Music Group');

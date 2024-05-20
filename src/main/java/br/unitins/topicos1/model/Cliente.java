@@ -6,7 +6,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 
 @Entity
-public class Paciente extends DefaultEntity {
+public class Cliente extends DefaultEntity {
 
     @OneToOne
     @JoinColumn(name = "id_pessoa", referencedColumnName = "id", unique = true)

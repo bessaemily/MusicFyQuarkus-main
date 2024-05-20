@@ -2,7 +2,7 @@ package br.unitins.topicos1.dto;
 
 import java.time.LocalDate;
 
-public record PacienteDTO(
+public record ClienteDTO(
     String cpf,
     String nome,
     LocalDate dataNascimento,

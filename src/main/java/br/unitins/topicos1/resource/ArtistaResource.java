@@ -5,6 +5,7 @@ import org.jboss.logging.Logger;
 import br.unitins.topicos1.dto.ArtistaDTO;
 import br.unitins.topicos1.dto.ArtistaResponseDTO;
 import br.unitins.topicos1.service.ArtistaService;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.validation.ConstraintViolationException;
@@ -92,6 +93,7 @@ public class ArtistaResource {
     }
 
     @GET
+    //@RolesAllowed("Cliente")
     public Response findAll(
                 @QueryParam("page") @DefaultValue("0") int page,
                 @QueryParam("pageSize") @DefaultValue("100") int pageSize) {
