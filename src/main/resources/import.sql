@@ -29,7 +29,7 @@ insert into gravadora (nome) values ('Universal Music Group');
 insert into gravadora (nome) values ('Republic Records');
 insert into gravadora (nome) values ('Independente/Desconhecida');
 
-insert into artista (nome, descricao) values ('Banda Calypso', 'Banda Calypso foi uma banda brasileira de calypso, com influências de ritmos regionais do estado de origem. O conjunto foi formado em Belém no estado do Pará, em 10 de junho de 1999, pela cantora e dançarina Joelma Mendes e pelo guitarrista e produtor musical, Cledivan Almeida Farias, mais conhecido como Ximbinha.');
+insert into artista (nome, descricao) values ('Banda Calypso', 'Banda Calypso foi uma banda brasileira de calypso, criada em 1999 na cidade de Belém, no Pará. A banda foi liderada pela cantora Joelma Mendes e pelo guitarrista Ximbinha.');
 insert into artista (nome, descricao) values ('Banda Kassikó', 'Banda de Recife (PE), formada em 2000, influenciada por estilos como Calypso, Melody e Forró, além do ritmo caribenho Kasseko, que deu origem ao nome do grupo.');
 insert into artista (nome, descricao) values ('Anitta', 'Larissa de Macedo Machado, mais conhecida pelo seu nome artístico Anitta, é uma cantora, compositora, atriz, dançarina e empresária brasileira.');
 
